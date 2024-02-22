@@ -1,9 +1,40 @@
-.card {
+.cardLayout {
 	position: relative;
 	display: flex;
 	justify-content: center;
-	flex: auto;
+	margin: 0;
 	margin-top: 1em;	
 	flex-basis: calc(33.33%);
-	box-sizing: border-box;
+}
+
+.card {
+	width: 17rem;
+	height: 20em;
+	margin-top: 20px;
+	background-color: transparent;
+	color: white;
+	border-color: white;
+	transition: 0.5s;
+}
+
+.card_text {
+	height: 65%;
+}
+
+.myBtn {
+	color: white;
+	background-color: transparent;
+	border: 3px solid transparent;
+	width: 100%;
+}
+
+.myBtn:hover {
+	color: white;
+	background-color: black;
+}
+
+.myBtn:active {
+	color: black !important;
+	background-color: whitesmoke !important;
+	
 }

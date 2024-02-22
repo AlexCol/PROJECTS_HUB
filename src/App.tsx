@@ -1,14 +1,9 @@
-import './App.css';
-import Body from "./components/Body/Body"
-import Header from "./components/Header/Header"
+import AppRoutes from './components/AppRoutes/AppRoutes';
 
 function App() {
 
   return (
-    <div id='app'>
-			<Header />
-			<Body />
-		</div>      
+		<AppRoutes/>
   )
 }
 

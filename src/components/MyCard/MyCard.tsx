@@ -1,39 +1,45 @@
-import { CSSProperties, useState } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 import styles from './MyCard.module.css'
-import { Card } from "react-bootstrap"
+import { Button, Card } from "react-bootstrap"
+import { handleMouseEnter, handleMouseLeave, redirectToExternalSite } from './Utils';
 
-function MyCard() {
-	const [isTrembling, setIsTrembling] = useState(false);
+interface IMyCardProps {
+	header: string,
+	title: string,
+	message: string,
+	linkTo: string
+}
 
-	const handleClick = () => {
-    setIsTrembling(true);
-    setTimeout(() => setIsTrembling(false), 500); // Desativa a animação após 500ms
-  };
-	const tremorStyles = {
-    transition: 'transform 0.1s ease-in-out', // Adiciona uma transição suave para o efeito de tremor
-    transform: isTrembling ? 'rotate(-1deg)' : 'none', // Aplica a rotação se estiver tremendo
-  };
+function MyCard({header, title, message, linkTo}: IMyCardProps) {	
+	const listRef = useRef<HTMLDivElement>(null);
+	const btnRef = useRef<HTMLButtonElement>(null);
+	const colors = [Math.floor(Math.random() * 128)+50, Math.floor(Math.random() * 128)+50, Math.floor(Math.random() * 128)+50]
 
-	const myCss: CSSProperties = {
-		//width: "12rem",
-		//color: 'lightgray',
-		//background: "blue" //precisa tirar o bg do card
-		width: '17rem', marginTop: '20px', cursor: 'pointer', ...tremorStyles
-	}
+	useLayoutEffect(() => {
+		handleMouseLeave(listRef, btnRef, colors);
+	})
 	
 	return (
-		<div className={styles.card}>
-			<Card bg='primary' style={myCss} className="mb-2" onClick={handleClick}>
-				<Card.Header>Header</Card.Header>
-				<Card.Body>
-					<Card.Title>Card Title </Card.Title>
-					<Card.Text>
-						Some quick example text to build on the card title and make up the
-						bulk of the card's content.
-					</Card.Text>
-				</Card.Body>
-			</Card>
-		</div>
+			<div className={styles.cardLayout}>
+					<Card 
+						ref={listRef} 
+						className={styles.card}
+						onMouseEnter={() => handleMouseEnter(listRef, btnRef, colors)}
+						onMouseLeave={() => handleMouseLeave(listRef, btnRef, colors)}
+					>
+							<Card.Header>{header}</Card.Header>
+							<Card.Body>
+									<Card.Title>{title}</Card.Title>
+									<Card.Text className={styles.card_text}>{message}</Card.Text>
+									<Button 
+										ref={btnRef} 
+										className={styles.myBtn}
+										onClick={() => redirectToExternalSite(linkTo)}
+									>Ir para aplicação</Button>
+							</Card.Body>
+					</Card>
+			</div>
 	)
 }
+
 export default MyCard

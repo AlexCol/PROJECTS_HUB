@@ -1,0 +1,13 @@
+.about {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+		text-align: left;
+		color: white;
+}
+
+.about a {
+  color: green;
+  text-decoration: none;
+}

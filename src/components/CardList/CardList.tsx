@@ -8,7 +8,7 @@ interface ICardListProp {
 
 function CardList({children, title}: ICardListProp) {
 	return (
-		<div className={styles.list}>
+		<div className={styles.list}>	
 			<h2 className={styles.list_titulo}>{title}</h2>
 			<div className={styles.list_cards}>
 				{children}
