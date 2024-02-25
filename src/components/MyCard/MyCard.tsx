@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 import styles from './MyCard.module.css'
 import { Button, Card } from "react-bootstrap"
 import { handleMouseEnter, handleMouseLeave, redirectToExternalSite } from './Utils';
@@ -12,8 +12,11 @@ interface IMyCardProps {
 
 function MyCard({header, title, message, linkTo}: IMyCardProps) {	
 	const listRef = useRef<HTMLDivElement>(null);
-	const btnRef = useRef<HTMLButtonElement>(null);
-	const colors = [Math.floor(Math.random() * 128)+50, Math.floor(Math.random() * 128)+50, Math.floor(Math.random() * 128)+50]
+	const btnRef = useRef<HTMLButtonElement>(null);	
+	const [colorR] = useState(Math.floor(Math.random() * 128)+50);
+	const [colorG] = useState(Math.floor(Math.random() * 128)+50);
+	const [colorB] = useState(Math.floor(Math.random() * 128)+50);
+	const colors = [colorR, colorG, colorB];
 
 	useLayoutEffect(() => {
 		handleMouseLeave(listRef, btnRef, colors);
