@@ -4,7 +4,7 @@ import styles from './About.module.css';
 const About = () => {
     return (
         <div className={styles.about}>
-            <h2>Hub de Projetos.</h2>
+            <h2 className={styles.title}>Hub de Projetos.</h2>
             <ul>
 							<li>Projeto central para apresentação das demais criações. Cada uma acessada via card na tela principal.</li>
 							<li>Pagina criada usando:</li>

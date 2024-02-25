@@ -6,13 +6,23 @@ import Header from "../Header/Header"
 
 function AppRoutes() {
 	return (
-		<div className={styles.routes}>
+		<div className={styles.router}>
 			<BrowserRouter>
-				<Header />
-				<Routes>
-					<Route path="/" element={<Home/>}></Route>
-					<Route path="/About" element={<About/>}></Route>
-				</Routes>
+				<table>
+					<tbody>
+						<tr className={styles.router_header}>
+							<td><Header /></td>
+						</tr>
+						<tr className={styles.router_body}>
+							<td>
+								<Routes>
+									<Route path="/" element={<Home/>}></Route>
+									<Route path="/About" element={<About/>}></Route>
+								</Routes>
+							</td>
+						</tr>
+					</tbody>
+				</table>
 			</BrowserRouter>
 		</div>
 	)

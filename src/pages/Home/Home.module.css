@@ -1,5 +1,45 @@
-.home {
+.body {
+	position: relative;
 	display: flex;
-	flex-direction: column;
+	justify-content: center;
 	height: 100%;
+	overflow-y: auto; /*criar o overflow se a lista de cartas passar dos limites de tr*/
+	scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.cardList {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 100%;
+	overflow-y: auto; /*criar o overflow se a lista de cartas passar dos limites de .body*/
+	scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.svg {
+	position: absolute;
+	font-size: 3em;
+	color: white;
+	bottom: 10%;
+	right: 2%;
+}
+
+.check {
+	color: green;	
+}
+
+@keyframes jump {
+	0%, 100%  {
+    transform: translateY(0);
+  }
+	50% {
+    transform: translateY(-20px); /* Altere a altura do pulo conforme desejado */
+  }
+}
+
+.down {
+	color: blueviolet;
+	animation: jump 1s infinite; /* A animação vai durar 1 segundo e se repetirá infinitamente */
 }

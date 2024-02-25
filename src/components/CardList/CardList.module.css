@@ -10,12 +10,12 @@
 .list_titulo {
 	position: sticky;
 	top: 0;
-	z-index: 999;
 	text-align: center;
 	background-color: white;
 	color: black;
 	width: 100%;
 	margin: 0;
+	padding-bottom: 0.1em;
 }
 
 .list_cards {
