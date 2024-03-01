@@ -1,0 +1,2 @@
+//para criar e atualizar
+docker-compose up -d --build
