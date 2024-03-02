@@ -45,7 +45,7 @@ function Home() {
 					
 					</CardList>	
 					<CardList title='Aplicações em AspNet(C#).'>
-						<MyCard header='AspNet' title='Autenticador' message='Api de controle de Usuários - Login e Registro - para uso das demais aplicações.' linkTo='https://localhost:7119/swagger/index.html'/>
+						<MyCard header='AspNet' title='Autenticador' message='Api de controle de Usuários - Login e Registro - para uso das demais aplicações.' linkTo='http://localhost:5085/swagger/index.html'/>
 					</CardList>
 				
 					<div className={styles.svg}>
