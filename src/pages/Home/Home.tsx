@@ -40,7 +40,7 @@ function Home() {
 				<Meteor />
 				<div ref={contentRef} className={styles.cardList}>					
 					<CardList title='Aplicações em React.'>
-						<MyCard header='React' title='Tela de Autenticação' message='Tela de autenticação que consome a Api de autenticação criada em aspnet, e realiza os direcionamentos devidos.' linkTo={`http://localhost:3011?o=${originPath}`}/>
+						<MyCard header='React' title='Tela de Autenticação' message='Tela de autenticação que consome a Api de autenticação criada em aspnet, e realiza os direcionamentos devidos.' linkTo={`https://telas-autenticador-react-two.vercel.app?o=${originPath}`}/>
 						<MyCard header='React' title='Jogo da Memória' message='Jogo da mémoria para testar e aprender funcionalidades.' linkTo={`http://localhost:3012`}/>
 					
 					</CardList>	
